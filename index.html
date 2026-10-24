@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Food Delivery System | OOD Project</title>
+<meta name="description" content="Object-Oriented Design of an Online Food Delivery System: poster, UML diagrams, real-world scenario and project details.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">🍔 FoodDelivery<span>OOD</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav id="navLinks">
+      <a href="#about">About</a>
+      <a href="#scenario">Real World</a>
+      <a href="#design">Design</a>
+      <a href="#diagrams">Diagrams</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#video">Video</a>
+      <a href="#team">Author</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Object-Oriented Analysis &amp; Design Project</p>
+      <h1>Online Food Delivery System</h1>
+      <p class="lead">A modular, reliable and maintainable food ordering application designed using Object-Oriented Design and UML.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#about">Explore Project</a>
+        <a class="btn ghost" href="assets/poster.pdf" download>Download Poster</a>
+      </div>
+      <ul class="stats">
+        <li><strong data-count="9">0</strong><span>Core Classes</span></li>
+        <li><strong data-count="4">0</strong><span>Actors</span></li>
+        <li><strong data-count="11">0</strong><span>Use Cases</span></li>
+        <li><strong data-count="3">0</strong><span>Layers</span></li>
+      </ul>
+    </div>
+    <div class="hero-card">
+      <img src="assets/poster.png" alt="Project poster preview" id="posterThumb">
+      <span class="tag">Click to enlarge</span>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="title">About the Poster</h2>
+    <p class="sub">A one-page A2 poster that summarises the complete object-oriented design of the system.</p>
+    <div class="grid two">
+      <div class="card reveal">
+        <h3>Problem Statement</h3>
+        <p>Manual or phone-based food ordering can cause wrong orders, delayed deliveries, and poor order tracking. The proposed Food Delivery System lets customers browse restaurants, place orders, pay online and track delivery. Restaurants manage menus and orders, and delivery agents handle dispatch through a centralized system.</p>
+        <p class="goal"><b>Goal:</b> Apply Object-Oriented Design (OOD) to create a modular, reliable, and maintainable food ordering application.</p>
+      </div>
+      <div class="card reveal">
+        <h3>System Objectives</h3>
+        <ul class="ticks">
+          <li>Search restaurants by cuisine, rating, and location</li>
+          <li>View menus and prices before ordering</li>
+          <li>Place, update, and cancel orders</li>
+          <li>Maintain customer and order information</li>
+          <li>Process payments and confirm orders</li>
+          <li>Allow restaurants to manage menu items</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="scenario">
+  <div class="container">
+    <h2 class="title">Real-World Scenario</h2>
+    <p class="sub">How apps like Zomato, Swiggy or Uber Eats work, and where object-oriented design fits in.</p>
+    <div class="grid three">
+      <article class="card icon-card reveal"><div class="ico">📱</div><h3>1. Customer orders</h3><p>Priya opens the app on a busy evening, searches for "paneer tikka" near her home, compares ratings and delivery time, and adds items to her cart.</p></article>
+      <article class="card icon-card reveal"><div class="ico">👨‍🍳</div><h3>2. Restaurant prepares</h3><p>The restaurant receives the order on its dashboard, accepts it, and marks the items as being prepared. Sold-out dishes are switched off from the menu.</p></article>
+      <article class="card icon-card reveal"><div class="ico">🛵</div><h3>3. Agent delivers</h3><p>The nearest delivery agent is assigned, picks up the food and updates the status step by step until it is delivered to the doorstep.</p></article>
+    </div>
+    <div class="card wide reveal">
+      <h3>Why a manual process fails</h3>
+      <div class="grid three compact">
+        <div class="pill bad">Wrong or missed orders on phone calls</div>
+        <div class="pill bad">No live tracking or delivery estimate</div>
+        <div class="pill bad">Cash-only payments and no records</div>
+      </div>
+      <h3 class="mt">How this design solves it</h3>
+      <div class="grid three compact">
+        <div class="pill good">Every order is a tracked <b>Order</b> object with a status</div>
+        <div class="pill good"><b>Payment</b> class handles UPI, card and cash uniformly</div>
+        <div class="pill good">Clear classes make the app easy to extend and test</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="design">
+  <div class="container">
+    <h2 class="title">Object-Oriented Design</h2>
+    <p class="sub">The core principles and main classes used in the system.</p>
+
+    <h3 class="mini">Core OOD Principles</h3>
+    <div class="grid four">
+      <div class="card flip reveal"><h4>Encapsulation</h4><p>Keep data and related operations within classes.</p></div>
+      <div class="card flip reveal"><h4>Abstraction</h4><p>Hide internal complexity behind simple operations.</p></div>
+      <div class="card flip reveal"><h4>Inheritance</h4><p>Customer, Restaurant and DeliveryAgent share common properties through a User class.</p></div>
+      <div class="card flip reveal"><h4>Polymorphism</h4><p>Different payment methods (UPI, card, cash) implement the same payment operation.</p></div>
+    </div>
+
+    <h3 class="mini">Main Classes <small>(click a class to see its details)</small></h3>
+    <div class="class-explorer">
+      <div class="class-list" id="classList" role="tablist"></div>
+      <div class="class-detail card" id="classDetail" aria-live="polite"></div>
+    </div>
+
+    <h3 class="mini">System Architecture</h3>
+    <div class="layers">
+      <div class="layer l1 reveal"><b>Presentation Layer</b><span>Interface for customers, restaurants, delivery agents and administrators.</span></div>
+      <div class="arrow">⇅</div>
+      <div class="layer l2 reveal"><b>Business Logic Layer</b><span>Menu search, order processing, payments and delivery assignment.</span></div>
+      <div class="arrow">⇅</div>
+      <div class="layer l3 reveal"><b>Data Layer</b><span>Stores customer, restaurant, menu, order and payment information.</span></div>
+    </div>
+    <p class="note"><b>Purpose:</b> Separating these layers improves organization, testing, and maintainability.</p>
+  </div>
+</section>
+
+<section class="section alt" id="diagrams">
+  <div class="container">
+    <h2 class="title">UML Diagrams</h2>
+    <p class="sub">Click an image to view it full screen.</p>
+    <div class="tabs" id="diagramTabs">
+      <button class="tab active" data-target="classPane">Class Diagram</button>
+      <button class="tab" data-target="usePane">Use Case Diagram</button>
+      <button class="tab" data-target="relPane">Relationships</button>
+    </div>
+    <div class="pane active" id="classPane"><img class="zoomable" src="assets/class-diagram.png" alt="UML class diagram of the food delivery system"></div>
+    <div class="pane" id="usePane"><img class="zoomable" src="assets/use-case-diagram.png" alt="Use case diagram with Customer, Restaurant, Delivery Agent and Admin"></div>
+    <div class="pane" id="relPane">
+      <ul class="rel">
+        <li><b>Inheritance:</b> Customer, Restaurant, and DeliveryAgent inherit shared properties from User.</li>
+        <li><b>Association:</b> A Customer places orders.</li>
+        <li><b>One-to-many:</b> A Customer may place multiple orders over time.</li>
+        <li><b>Order–MenuItem:</b> An order contains one or more menu items.</li>
+        <li><b>Order–Payment:</b> An order is associated with one payment record.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workflow">
+  <div class="container">
+    <h2 class="title">Order Workflow</h2>
+    <p class="sub">Press "Play" to watch an order move through the system.</p>
+    <div class="stepper" id="stepper"></div>
+    <div class="step-info card" id="stepInfo"></div>
+    <div class="hero-actions center">
+      <button class="btn primary" id="playBtn">▶ Play</button>
+      <button class="btn ghost dark" id="prevBtn">Previous</button>
+      <button class="btn ghost dark" id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="quality">
+  <div class="container">
+    <h2 class="title">Quality, Impact &amp; Limitations</h2>
+    <div class="grid three">
+      <div class="card reveal"><h3>Quality Assurance</h3>
+        <ul class="ticks">
+          <li><b>Functional:</b> searching, ordering, payment, cancellation</li>
+          <li><b>Availability:</b> block out-of-stock items</li>
+          <li><b>Validation:</b> customer details and address</li>
+          <li><b>Security:</b> protect data, role-based access</li>
+          <li><b>Integration:</b> order, payment and delivery modules</li>
+        </ul></div>
+      <div class="card reveal"><h3>Benefits &amp; Future Scope</h3>
+        <h4>Benefits</h4>
+        <ul class="ticks"><li>Faster ordering and restaurant management</li><li>Fewer manual errors and wrong orders</li><li>Easier maintenance, testing and extension</li></ul>
+        <h4>Future enhancements</h4>
+        <ul class="ticks"><li>AI-based food recommendations</li><li>Cloud-based data management</li><li>Mobile apps and live location tracking</li><li>Secure online payment integration</li></ul></div>
+      <div class="card reveal"><h3>Limitations &amp; Challenges</h3>
+        <ul class="ticks warn">
+          <li>Handling heavy order traffic during peak hours</li>
+          <li>Protecting customer information and payment details</li>
+          <li>Maintaining accurate menu availability and delivery times</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="video">
+  <div class="container">
+    <h2 class="title">Project Video</h2>
+    <p class="sub">Watch a video related to this project.</p>
+    <div class="video-wrap card">
+      <div class="video-frame" id="videoFrame"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="team">
+  <div class="container">
+    <h2 class="title">Author</h2>
+    <div class="author card">
+      <div class="avatar">CM</div>
+      <div>
+        <h3>Chandan Mondal</h3>
+        <p>Enrolment No: 202303103510104</p>
+        <p>AMTICS, UTU</p>
+      </div>
+    </div>
+    <div class="card conclusion reveal">
+      <h3>Conclusion</h3>
+      <p>Object-Oriented Design separates food delivery operations into reusable classes and clear relationships, supporting a reliable, extensible, and maintainable ordering system.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Online Food Delivery System · Chandan Mondal (202303103510104) · AMTICS, UTU</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="lightbox" id="lightbox"><img alt="" id="lightImg"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
